@@ -1,5 +1,5 @@
-require './point'
-require './boxes'
+require './bound_poly/point'
+require './bound_poly/boxes'
 
 describe "Point" do
   before :each do

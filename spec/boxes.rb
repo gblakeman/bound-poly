@@ -1,4 +1,4 @@
-require './boxes'
+require './bound_poly/boxes'
 
 describe "Box" do
   before :each do

@@ -1,6 +1,6 @@
 require 'digest/md5'
-require './boxes'
-require './point'
+require './bound_poly/boxes'
+require './bound_poly/point'
 
 def makeit(words)
   @hp = HashPoly.new([480,270], 0.6, words) 

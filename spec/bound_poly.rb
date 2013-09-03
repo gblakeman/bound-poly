@@ -1,4 +1,4 @@
-require './hash_poly'
+require './bound_poly'
 
 describe HashPoly do
   before :each do

@@ -1,3 +1,5 @@
+require './bound_poly/point'
+
 class Box
 
   attr_accessor :width, :height, :x_offset, :y_offset
