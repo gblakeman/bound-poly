@@ -21,24 +21,6 @@ class BoundPoly
   def poly_points(method = :points)
     if method == :points
       @poly_points
-    elsif method == :svg
-      svg_string = <<SVG
-      <?xml version="1.0" standalone="no"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      <svg width="#{@nested_boxes.outer.width}px" height="#{@nested_boxes.outer.height}px" viewBox="0 0 #{@nested_boxes.outer.width} #{@nested_boxes.outer.height}" xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <desc>Rollit!</desc>
-
-        <!-- Show outline of canvas -->
-        <rect x="1" y="1" width="#{@nested_boxes.outer.width - 2}" height="#{@nested_boxes.outer.height - 2}" fill="none" stroke="blue" stroke-width="2" />
-
-        <!-- Show outline of inner box -->
-        <rect x="#{@nested_boxes.inner.x_offset + 1}" y="#{@nested_boxes.inner.y_offset + 1}" width="#{@nested_boxes.inner.width}" height="#{@nested_boxes.inner.height}" fill="none" stroke="blue" stroke-width="2" />
-
-        <polygon fill="none" stroke="lime" stroke-width="4" 
-                  points="#{poly_points(:coordinates)}"
-        >
-      </svg>
-SVG
     elsif method == :coordinates
       coords = ""
       @poly_points.each do |point|
@@ -53,13 +35,12 @@ SVG
       @polygon
     elsif method == :svg
       svg_string = <<SVG
-      <?xml version="1.0" standalone="no"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-        <desc>Rollit!</desc>
-        <polygon fill="none" stroke="lime" stroke-width="4" 
-                  points="#{polygon(:coordinates)}"
-        >
-      </svg>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<desc>Rollit!</desc>
+<polygon fill="none" stroke="lime" stroke-width="4" 
+points="#{polygon(:coordinates)}"></polygon>
+</svg>
 SVG
     elsif method == :coordinates
       coords = ""
@@ -262,7 +243,7 @@ SVG
         try = Point.new(point.x - o, point.y - a, nested_boxes)
         return try unless try.location == false
 
-        a = point.y - nested_boxes.y_offset
+        a = point.y - nested_boxes.outer.y_offset
         o = (a * Math::tan(angle))
         try = Point.new(point.x - o, point.y - a, nested_boxes)
         return try unless try.location == false

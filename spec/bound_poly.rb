@@ -1,8 +1,8 @@
-require './bound_poly'
+require './lib/bound_poly'
 
-describe HashPoly do
+describe BoundPoly do
   before :each do
-    @hp = HashPoly.new([160,90], 0.7, "rollit") 
+    @hp = BoundPoly.new([160,90], 0.7, "rollit") 
   end
 
   it "should have everything it needs" do
@@ -36,19 +36,11 @@ describe HashPoly do
     it "should return plain text points if asked" do
       @hp.poly_points(:coordinates).should be_is_a String
     end
-
-    it "should make an svg polygon if asked" do
-      @hp.poly_points(:svg).should be_is_a String
-      @hp.poly_points(:svg).should =~ /svg/
-    end
   end
 
   describe "#polygon" do
     it "should return plain text points if asked" do
       @hp.poly_points(:coordinates).should be_is_a String
-    end
-
-    it "should be an svg shape" do
     end
   end
 
@@ -62,7 +54,6 @@ describe HashPoly do
     end
     it "should make an svg polygon if asked" do
       @hp.polygon(:svg).should be_is_a String
-      @hp.poly_points(:svg).should =~ /svg/
     end
   end
 
