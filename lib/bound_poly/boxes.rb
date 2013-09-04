@@ -1,4 +1,4 @@
-require './lib/bound_poly/point'
+require './bound_poly/point'
 
 class Box
 
