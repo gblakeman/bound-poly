@@ -1,6 +1,6 @@
 require 'digest/md5'
-require './bound_poly/boxes'
-require './bound_poly/point'
+require 'bound_poly/boxes'
+require 'bound_poly/point'
 
 class BoundPoly
   attr_accessor :hash, :angles, :poly_points, :nested_boxes, :polygon, :min_angle, :max_angle

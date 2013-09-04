@@ -1,4 +1,4 @@
-require './bound_poly/boxes'
+require 'bound_poly/boxes'
 
 class Point
   attr_accessor :x, :y, :location
