@@ -2,11 +2,7 @@ require 'digest/md5'
 require './bound_poly/boxes'
 require './bound_poly/point'
 
-def makeit(words)
-  @hp = HashPoly.new([480,270], 0.6, words) 
-end
-
-class HashPoly
+class BoundPoly
   attr_accessor :hash, :angles, :poly_points, :nested_boxes, :polygon, :min_angle, :max_angle
 
   def initialize(outer_box_dimentions, inner_box_percentage, some_text)
