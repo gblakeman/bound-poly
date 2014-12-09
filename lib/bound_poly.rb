@@ -35,7 +35,7 @@ class BoundPoly
       @polygon
     elsif method == :svg
       svg_string = <<SVG
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="#{@nested_boxes.outer.width}px" height="#{@nested_boxes.outer.height}" viewBox="0 0 #{@nested_boxes.outer.width} #{@nested_boxes.outer.height}" preserveAspectRatio="xMinYMin" enable-background="new 0 0 #{@nested_boxes.outer.width} #{@nested_boxes.outer.height}" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="#{@nested_boxes.outer.width}px" height="#{@nested_boxes.outer.height}px" viewBox="0 0 #{@nested_boxes.outer.width} #{@nested_boxes.outer.height}" preserveAspectRatio="xMinYMin" enable-background="new 0 0 #{@nested_boxes.outer.width} #{@nested_boxes.outer.height}" xml:space="preserve">
 <polygon fill="none" stroke="lime" stroke-width="4" 
 points="#{polygon(:coordinates)}"></polygon>
 </svg>

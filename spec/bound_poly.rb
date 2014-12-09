@@ -2,7 +2,7 @@ require './lib/bound_poly'
 
 describe BoundPoly do
   before :each do
-    @hp = BoundPoly.new([160,90], 0.7, "rollit") 
+    @hp = BoundPoly.new([1200, 676], 0.7, "rollit") 
   end
 
   it "should have everything it needs" do
